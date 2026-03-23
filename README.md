@@ -78,7 +78,8 @@ If you prefer Jupyter in your browser:
 
 ```bash
 # Activate environment
-source ece4076_env/bin/activate      # Linux/macOS
+source ece4076_env/bin/activate      # Linux
+. ece4076_env/bin/activate           # macOS
 ece4076_env\Scripts\activate.bat      # Windows
 
 # Start Jupyter
@@ -124,6 +125,15 @@ chmod +x install.sh
 - If interrupted, run the script again—it resumes from where it left off
 - Ensure you have ~2GB free disk space
 
+### Python package issues (especially on Windows)
+**Solution:** Use the conda-based installer instead:
+```bash
+# Linux/macOS
+chmod +x install_conda.sh
+./install_conda.sh
+```
+This creates a self-contained conda environment and avoids common dependency conflicts. Windows users: ensure conda is installed, then run the bash command above in a conda prompt or PowerShell.
+
 ### "ModuleNotFoundError" when running notebooks
 **Solution:** Make sure you're using the ECE4076 kernel
 1. In VS Code: Look for "Select Kernel" button (top right of notebook)
@@ -148,7 +158,8 @@ python -m ipykernel install --user --name ece4076 --display-name "ECE4076"
 ### "ImportError: No module named 'cv2'" or similar
 **Solution:** Activate the environment before running notebooks
 ```bash
-source ece4076_env/bin/activate      # Linux/macOS
+source ece4076_env/bin/activate      # Linux
+. ece4076_env/bin/activate           # macOS
 ece4076_env\Scripts\activate.bat      # Windows
 jupyter notebook
 ```
